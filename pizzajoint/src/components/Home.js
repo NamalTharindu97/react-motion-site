@@ -4,16 +4,16 @@ import { motion } from "framer-motion";
 
 const buttonVariants = {
   hover: {
-    scale: 1.1,
+    scale: [1, 1.1, 1, 1.1, 1, 1.1, 1, 1.1, 1],
     textShadow: "0px 0px 8px rgb(255,255,255)",
     boxShadow: "0px 0px 8px rgb(255,255,255)",
   },
-  visible: {
-    x: [0, -20, 20, -20, 20, 0],
-    transition: {
-      delay: 2,
-    },
-  },
+  // visible: {
+  //   x: [0, -20, 20, -20, 20, 0],
+  //   transition: {
+  //     delay: 2,
+  //   },
+  // },
 };
 
 const Home = () => {
@@ -28,7 +28,7 @@ const Home = () => {
       <Link to="/base">
         <motion.button
           variants={buttonVariants}
-          animate="visible"
+          // animate="visible"
           whileHover="hover"
         >
           Create Your Pizza
