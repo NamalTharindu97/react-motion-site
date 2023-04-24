@@ -11,6 +11,20 @@ const backdrop = {
   },
 };
 
+const model = {
+  hidden: {
+    opacity: 0,
+    y: "-100vh",
+  },
+  visible: {
+    opacity: 1,
+    y: "200px",
+    transition: {
+      delay: 0.5,
+    },
+  },
+};
+
 const Modal = ({ showModel, setShowModel }) => {
   return (
     <AnimatePresence exitBeforeEnter>
@@ -20,11 +34,12 @@ const Modal = ({ showModel, setShowModel }) => {
           variants={backdrop}
           initial="hidden"
           animate="visible"
+          exit="hidden"
         >
-          <motion.div className="modal">
+          <motion.div className="modal" variants={model}>
             <p>want to make another pizza ?</p>
             <Link to="/">
-              <button>Start Again</button>
+              <button onClick={() => setShowModel(false)}>Start Again</button>
             </Link>
           </motion.div>
         </motion.div>
