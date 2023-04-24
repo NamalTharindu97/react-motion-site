@@ -17,6 +17,10 @@ const contrainerVariants = {
       staggerChildren: 0.4,
     },
   },
+  exit: {
+    x: "-100vw",
+    transition: { ease: "easeInOut" },
+  },
 };
 const childVarients = {
   hidden: {
@@ -39,12 +43,9 @@ const Order = ({ pizza }) => {
       variants={contrainerVariants}
       initial="hidden"
       animate="visible"
+      exit="exit"
     >
-      <AnimatePresence>
-        {showTitle && (
-          <motion.h2 exit={{ y: -1000 }}>Thank you for your order :)</motion.h2>
-        )}
-      </AnimatePresence>
+      <h2>Thank you for your order :)</h2>
 
       <motion.p variants={childVarients}>
         You ordered a {pizza.base} pizza with:
