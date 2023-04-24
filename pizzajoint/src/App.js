@@ -31,7 +31,10 @@ function App() {
     <>
       <Header />
       <Modal showModel={showModel} setShowModel={setShowModel} />
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence
+        exitBeforeEnter
+        onExitComplete={() => setShowModel(false)}
+      >
         <Switch location={location} key={location.key}>
           <Route path="/base">
             <Base addBase={addBase} pizza={pizza} />
