@@ -20,7 +20,14 @@ const Modal = ({ showModel, setShowModel }) => {
           variants={backdrop}
           initial="hidden"
           animate="visible"
-        ></motion.div>
+        >
+          <motion.div className="modal">
+            <p>want to make another pizza ?</p>
+            <Link to="/">
+              <button>Start Again</button>
+            </Link>
+          </motion.div>
+        </motion.div>
       )}
     </AnimatePresence>
   );
